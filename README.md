@@ -1,12 +1,53 @@
-# Maven Fuzzy Factory: E-commerce Analytics (Excel + Power BI)
+<div align="center">
 
-An end-to-end analysis of an online toy retailer's website traffic, conversion funnel, marketing channels, products and refunds. Built in **Excel** (KPI workbook with pivot analysis and reconciliation checks) and **Power BI** (multi-page interactive report).
+# Maven Fuzzy Factory
+### E-commerce Analytics in Excel and Power BI
 
-![Final dashboard](Screenshots/PowerBI/01_Final_Dashboard_LinkedIn_2400px.png)
+*Where does the funnel leak, which channels carry the business, and where do refunds concentrate?*
 
-**Author:** Varsani A | [GitHub](https://github.com/varshaanbu3107-afk) | LinkedIn: _add your profile link_
-**Data:** Maven Analytics "Maven Fuzzy Factory" sample dataset (a fictional company), 19 Mar 2012 to 19 Mar 2015
-**Scale:** 472,871 website sessions and 32,313 orders
+![Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge)
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&labelColor=black)
+![DAX](https://img.shields.io/badge/DAX-0078D4?style=for-the-badge)
+![Data](https://img.shields.io/badge/Data-Maven%20Analytics-1F4E79?style=for-the-badge)
+
+[Dashboard gallery](#dashboard-gallery) &nbsp;|&nbsp; [Key findings](#key-findings) &nbsp;|&nbsp; [Download the files](#get-the-files) &nbsp;|&nbsp; [Data dictionary](Docs/DATA_DICTIONARY_AND_ASSUMPTIONS.md) &nbsp;|&nbsp; [LinkedIn carousel](Report/Maven_Fuzzy_Factory_LinkedIn_Carousel.pdf)
+
+<img src="Screenshots/PowerBI/01_Final_Dashboard_LinkedIn_2400px.png" alt="Maven Fuzzy Factory final dashboard" width="100%">
+
+</div>
+
+---
+
+## Contents
+
+1. [Project at a glance](#project-at-a-glance)
+2. [Business questions](#business-questions)
+3. [Key findings](#key-findings)
+4. [Recommended actions](#recommended-actions)
+5. [Dashboard gallery](#dashboard-gallery)
+6. [How the analysis was done](#how-the-analysis-was-done)
+7. [Skills demonstrated](#skills-demonstrated)
+8. [Assumptions and limitations](#assumptions-and-limitations)
+9. [Get the files](#get-the-files)
+10. [Repository structure](#repository-structure)
+11. [Dataset credit](#dataset-credit)
+12. [What I would do next](#what-i-would-do-next)
+
+---
+
+## Project at a glance
+
+An end-to-end analysis of an online toy retailer's website traffic, conversion funnel, marketing channels, products and refunds. The work is delivered as a **Power BI report** (7 interactive pages) and an **Excel KPI workbook** (pivot analysis and reconciliation checks).
+
+**Period:** 19 Mar 2012 to 19 Mar 2015 &nbsp;|&nbsp; **Author:** Varsani A &nbsp;|&nbsp; [GitHub](https://github.com/varshaanbu3107-afk) &nbsp;|&nbsp; [LinkedIn](https://www.linkedin.com/in/a-varsani/)
+
+| Gross revenue | Net revenue | Gross profit | Gross margin |
+|:---:|:---:|:---:|:---:|
+| **$1.94M** | **$1.85M** | **$1.13M** | **61.02%** |
+
+| Sessions | Orders | Conversion rate | Average order value |
+|:---:|:---:|:---:|:---:|
+| **472,871** | **32,313** | **6.83%** | **$59.99** |
 
 ---
 
@@ -19,14 +60,16 @@ An end-to-end analysis of an online toy retailer's website traffic, conversion f
 5. Which products drive revenue, and where do refunds concentrate?
 6. What should the business do next?
 
-## Headline findings
+---
+
+## Key findings
 
 | # | Finding | Evidence |
-|---|---|---|
+|:---:|---|---|
 | 1 | **Mobile converts far below desktop** | 3.09% vs 8.50% (a 5.41-point gap) |
 | 2 | **One channel carries the business** | gsearch nonbrand: 59.8% of sessions, 58.2% of orders, converts at 6.66% vs 6.83% overall |
 | 3 | **The weakest funnel step is Product to Cart** | 55.2% (session to product), **36.3%** (product to cart), 54.8% (cart to billing), 62.1% (billing to order). Only 6.8% of sessions end in an order |
-| 4 | **Landing pages differ widely** | /lander-5 converts at 10.2% vs 3.4% for /lander-3 (see limitations: the pages may not have run over the same dates) |
+| 4 | **Landing pages differ widely** | /lander-5 converts at 10.2% vs 3.4% for /lander-3 (the pages may not have run over the same dates, see limitations) |
 | 5 | **Refunds are concentrated in one product** | The Original Mr. Fuzzy: 62.5% of revenue but 72.46% of refund dollars ($61,838 of $85,339). Birthday Sugar Panda has the highest item refund rate (6.04%) |
 | 6 | **The socialbook pilot underperformed** | 1.08% conversion (55 orders from 5,095 sessions). There is no spend data, so ROI cannot be calculated |
 | 7 | **Repeat sessions convert somewhat better** | 7.83% vs 6.64% for new sessions; net revenue per session $4.54 vs $3.80 (association only, cause not tested) |
@@ -34,7 +77,7 @@ An end-to-end analysis of an online toy retailer's website traffic, conversion f
 
 ### Illustrative estimates (not forecasts)
 
-These are simple what-if calculations from this dataset, labeled **illustrative**:
+Simple what-if calculations from this dataset, labeled **illustrative**:
 
 | Scenario | Calculation | Result |
 |---|---|---|
@@ -42,32 +85,51 @@ These are simple what-if calculations from this dataset, labeled **illustrative*
 | gsearch nonbrand conversion +0.5 point | 282,706 sessions x 0.5% x $59.99 AOV | about 1,400 orders, about $85K |
 | Mr. Fuzzy refund rate matches Forever Love Bear's (2.23%) | $1,211,058 revenue x (5.11% - 2.23%) | about $35K |
 
-## Dashboard preview
+---
 
-**Power BI report** (full-resolution images in `Screenshots/PowerBI/`; vector PDF in `Report/`)
+## Recommended actions
 
-| Page | Preview |
-|---|---|
-| Executive Overview | [02_Executive_Overview.png](Screenshots/PowerBI/02_Executive_Overview.png) |
-| Marketing and Channels | [03_Marketing_and_Channels.png](Screenshots/PowerBI/03_Marketing_and_Channels.png) |
-| Website Funnel | [04_Website_Funnel.png](Screenshots/PowerBI/04_Website_Funnel.png) |
-| Products and Refunds | [05_Products_and_Refunds.png](Screenshots/PowerBI/05_Products_and_Refunds.png) |
-| Customer and Device | [06_Customer_and_Device.png](Screenshots/PowerBI/06_Customer_and_Device.png) |
-| Insights and Recommendations | [07_Insights_and_Recommendations.png](Screenshots/PowerBI/07_Insights_and_Recommendations.png) |
+1. **Audit mobile checkout** and A/B test a simpler flow.
+2. **Optimize gsearch nonbrand**, and grow the higher-converting brand and direct channels.
+3. **Compare landing pages over the same dates**, then route traffic to the winner.
+4. **Root-cause Mr. Fuzzy refunds first.**
+5. **Pause or retest the socialbook pilot** with a clear hypothesis.
 
-The report also contains a Channel Tooltip page and a Product Drill-Through page (hidden pages, not shown in the images).
+---
 
-**Excel workbook** (images in `Screenshots/Excel/`): Dashboard, KPI Summary, Device, Product Performance, Order and Refund, Monthly Trend, YoY, Data Quality Checks, README sheet.
+## Dashboard gallery
 
-![Excel dashboard](Screenshots/Excel/01_Excel_Dashboard.png)
+Click any image to open it at full resolution. The main dashboard is shown at the top of this page.
 
-## Tools and skills
+<table>
+<tr>
+<td width="50%" align="center"><a href="Screenshots/PowerBI/02_Executive_Overview.png"><img src="Screenshots/PowerBI/02_Executive_Overview.png" alt="Executive Overview"></a><br><b>Executive Overview</b><br>KPIs, revenue trend, AOV trend, filters</td>
+<td width="50%" align="center"><a href="Screenshots/PowerBI/03_Marketing_and_Channels.png"><img src="Screenshots/PowerBI/03_Marketing_and_Channels.png" alt="Marketing and Channels"></a><br><b>Marketing and Channels</b><br>Sessions, conversion and revenue by channel</td>
+</tr>
+<tr>
+<td width="50%" align="center"><a href="Screenshots/PowerBI/04_Website_Funnel.png"><img src="Screenshots/PowerBI/04_Website_Funnel.png" alt="Website Funnel"></a><br><b>Website Funnel</b><br>Step conversion, landing pages, billing pages</td>
+<td width="50%" align="center"><a href="Screenshots/PowerBI/05_Products_and_Refunds.png"><img src="Screenshots/PowerBI/05_Products_and_Refunds.png" alt="Products and Refunds"></a><br><b>Products and Refunds</b><br>Revenue, gross profit, refund rate, units sold</td>
+</tr>
+<tr>
+<td width="50%" align="center"><a href="Screenshots/PowerBI/06_Customer_and_Device.png"><img src="Screenshots/PowerBI/06_Customer_and_Device.png" alt="Customer and Device"></a><br><b>Customer and Device</b><br>Device traffic and conversion (top section shown)</td>
+<td width="50%" align="center"><a href="Screenshots/PowerBI/07_Insights_and_Recommendations.png"><img src="Screenshots/PowerBI/07_Insights_and_Recommendations.png" alt="Insights and Recommendations"></a><br><b>Insights and Recommendations</b><br>Findings, impact and actions</td>
+</tr>
+</table>
 
-- **Excel:** pivot tables, charts, KPI summary, reconciliation checks, documentation sheet
-- **Power BI:** data modeling (date table, funnel stage table), DAX measures, multi-page report, slicers, page navigation, tooltip and drill-through pages
-- **Analysis:** funnel analysis, channel and device comparison, product and refund analysis, like-for-like year-over-year comparison, partial-period handling
+A PDF of all report pages is in [`Report/`](Report/Maven_Fuzzy_Factory_Power_BI_Report.pdf).
 
-## Metric definitions
+---
+
+## How the analysis was done
+
+1. **Model the data.** Eight tables in Power BI: website sessions, website pageviews, orders, order items, order item refunds, products, a date table and a funnel stage table.
+2. **Define the KPIs.** Gross and net revenue, gross profit and margin, conversion rate, AOV, refund rates and net revenue per session (definitions below).
+3. **Trace the funnel.** Sessions, product views, cart, billing and orders, with step-by-step conversion rates.
+4. **Compare segments.** Channel, device, new vs repeat sessions, landing page and product.
+5. **Handle partial periods.** March 2012 and March 2015 are partial months, so trends use full months only and year-over-year comparisons are like-for-like.
+6. **Turn findings into actions.** Each insight is written as finding, impact and action, with estimates labeled illustrative.
+
+### Metric definitions
 
 | Metric | Definition |
 |---|---|
@@ -82,9 +144,22 @@ The report also contains a Channel Tooltip page and a Product Drill-Through page
 | Items per order | Items sold / Orders |
 | Net Revenue per Session | Net Revenue / Sessions |
 
-Key totals: Gross Revenue $1,938,509.75, Net Revenue $1,853,171.06, COGS $722,370.25, Refunds $85,338.69, Gross Profit $1,130,800.81, Gross Margin 61.02%, Conversion 6.83%, AOV $59.99, Refund rate (items) 4.32%, Refunds % of revenue 4.40%.
+**Key totals:** Gross Revenue $1,938,509.75, Net Revenue $1,853,171.06, COGS $722,370.25, Refunds $85,338.69, Gross Profit $1,130,800.81, Gross Margin 61.02%, Conversion 6.83%, AOV $59.99, Refund rate (items) 4.32%, Refunds % of revenue 4.40%.
 
-Full definitions and the data dictionary are in [`Docs/DATA_DICTIONARY_AND_ASSUMPTIONS.md`](Docs/DATA_DICTIONARY_AND_ASSUMPTIONS.md).
+Full definitions, tables and columns are in the [data dictionary](Docs/DATA_DICTIONARY_AND_ASSUMPTIONS.md).
+
+---
+
+## Skills demonstrated
+
+| Area | What was used |
+|---|---|
+| **Excel** | Pivot tables, charts, KPI summary, reconciliation checks, documentation sheet |
+| **Power BI** | Data modeling (date table, funnel stage table), DAX measures, 7-page report, slicers, page navigation |
+| **Analysis** | Funnel analysis, channel and device comparison, product and refund analysis, like-for-like year-over-year comparison, partial-period handling |
+| **Communication** | Insights framed as finding, impact and action; assumptions and limitations documented |
+
+---
 
 ## Assumptions and limitations
 
@@ -95,15 +170,24 @@ Full definitions and the data dictionary are in [`Docs/DATA_DICTIONARY_AND_ASSUM
 - **Observational data:** device, channel and landing-page differences are associations. Channel mix may partly explain the device gap (not tested).
 - **Landing-page comparison** may not be like-for-like if pages ran in different periods (unverified).
 - **Data quality checks** in the workbook are internal reconciliation checks (totals agree across sheets). They are not an independent audit of the raw data.
-- The dataset is a sample/fictional company, so findings illustrate method rather than real business results.
+- The dataset is a sample of a fictional company, so the findings illustrate method rather than real business results.
 
-## How to open the files
+---
 
-> Large files are stored in **GitHub Releases** (not in the folders): _add your Release link here after publishing_.
+## Get the files
 
-- **Power BI report** (`Maven_Fuzzy_Factory_Analytics_FINAL.pbix`, about 55 MB): open with [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free, Windows). The data is stored inside the file. The report was built from local file paths, so to refresh from source you must repoint them under **Home > Transform data > Data source settings**.
-- **Excel workbook** (`Maven_Fuzzy_Factory_Analysis_Final.xlsx`, about 97 MB): open in desktop Excel. A yellow "External Data Connections have been disabled" banner is expected.
-- **No software?** Use the PDF in `Report/` and the images in `Screenshots/`.
+The two large files are in the **[Release v1.0.0](https://github.com/varshaanbu3107-afk/maven-fuzzy-factory-ecommerce-analytics/releases/tag/v1.0.0)**.
+
+| File | Size | Open with |
+|---|---|---|
+| `Maven_Fuzzy_Factory_Analytics.pbix` | about 54 MB | [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free, Windows) |
+| `Maven_Fuzzzy_Factory_Analysis.xlsx` | about 97 MB | Desktop Excel |
+
+- **Power BI:** the data is stored inside the file. The report was built from local file paths, so to refresh from source you must repoint them under **Home > Transform data > Data source settings**.
+- **Excel:** a yellow "External Data Connections have been disabled" banner is expected.
+- **No software?** Use the PDF in [`Report/`](Report/) and the images in [`Screenshots/`](Screenshots/PowerBI/).
+
+---
 
 ## Repository structure
 
@@ -116,16 +200,19 @@ maven-fuzzy-factory-ecommerce-analytics/
 |   |-- Maven_Fuzzy_Factory_Power_BI_Report.pdf
 |   `-- Maven_Fuzzy_Factory_LinkedIn_Carousel.pdf
 |-- Screenshots/
-|   |-- PowerBI/   (7 report pages)
-|   `-- Excel/     (9 workbook sheets)
-`-- Releases (large files)
-    |-- Maven_Fuzzy_Factory_Analytics_FINAL.pbix
-    `-- Maven_Fuzzy_Factory_Analysis_Final.xlsx
+|   `-- PowerBI/   (7 report pages)
+`-- Release v1.0.0 (large files)
+    |-- Maven_Fuzzy_Factory_Analytics.pbix
+    `-- Maven_Fuzzzy_Factory_Analysis.xlsx
 ```
+
+---
 
 ## Dataset credit
 
-Data: **Maven Analytics**, Maven Fuzzy Factory sample database (fictional online retailer). See the [Maven Analytics Data Playground](https://www.mavenanalytics.io/data-playground). The raw data is not included in this repository. Check the dataset's terms on Maven Analytics before redistributing it.
+Data: **Maven Analytics**, Maven Fuzzy Factory sample database (a fictional online retailer). See the [Maven Analytics Data Playground](https://www.mavenanalytics.io/data-playground). The raw data files are not stored in the repository folders; the report and workbook in the Release contain the sample data they were built on. Please check the dataset's terms on Maven Analytics before reusing or redistributing it.
+
+---
 
 ## What I would do next
 
@@ -136,4 +223,11 @@ Data: **Maven Analytics**, Maven Fuzzy Factory sample database (fictional online
 - Replace the workbook's internal checks with comparisons against the raw source files
 
 ---
-_Questions or feedback are welcome. Connect with me on LinkedIn._
+
+<div align="center">
+
+**Built by Varsani A** &nbsp;|&nbsp; [LinkedIn](https://www.linkedin.com/in/a-varsani/) &nbsp;|&nbsp; [GitHub](https://github.com/varshaanbu3107-afk)
+
+*Questions or feedback are welcome.*
+
+</div>

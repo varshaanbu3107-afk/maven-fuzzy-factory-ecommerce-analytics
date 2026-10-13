@@ -121,7 +121,7 @@ Average Order Value, Cart-to-Order Conversion Rate, Billing 2 Sessions, Billing 
 | Jan-Feb 2015 vs Jan-Feb 2014 | $122,581.41 to $261,424.48 (+113.27%) |
 | 2012 growth | Not shown (no 2011 data) |
 
-The Power BI Executive Overview shows "Net Revenue Growth 2014 vs 2013 = 173.1%" while the Excel YoY sheet shows **gross** revenue growth of 173.52%. They use different revenue bases; the net figure was not independently verified **(unverified)**.
+The Power BI Executive Overview card shows "Gross Revenue Growth 2014 vs 2013 = 173.52%", which matches the gross revenue growth on the Excel YoY sheet. The formula behind the Power BI card was not reviewed **(unverified)**.
 
 ---
 
